@@ -1,0 +1,16 @@
+# --- 本地敏感配置（仓库只含占位模板） ---
+conf/app_config.yaml
+
+# --- 运行产物 ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+logs/
+*.log
+.pytest_cache/
+.idea/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
