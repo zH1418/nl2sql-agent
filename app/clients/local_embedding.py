@@ -120,7 +120,11 @@ class LocalOnnxEmbeddings:
 if __name__ == "__main__":
     import sys
 
-    d = sys.argv[1] if len(sys.argv) > 1 else r"E:/shangguigu/models/bge-small-zh-v1.5-onnx"
+    import os
+
+    d = sys.argv[1] if len(sys.argv) > 1 else os.environ.get(
+        "LOCAL_EMBEDDING_MODEL_DIR", "models/bge-small-zh-v1.5-onnx"
+    )
     emb = LocalOnnxEmbeddings(d, dim=512)
     vs = emb.embed_documents(["华北地区的销售额", "手机数码品类", "2025年第一季度"])
     print(f"model_dir = {d}")
